@@ -36,10 +36,9 @@ if (r$shadow$length > 0) {
     y <- R * cos(theta * pi / 180)
     lines(x, y)
 
-    ## inner circle (stick height)
-    lines(r$shadow$height * sin(theta * pi / 180),
-          r$shadow$height * cos(theta * pi / 180),
-          col="gray")
+    ## inner circles at 1cm radius
+    for (radius in 1:10)
+    lines(radius*sin(theta*pi/180), radius*cos(theta*pi/180), col="gray", lty="dotted")
 
     ## Small segments at 1deg
     xx <- (R-R/denom) * sin(theta * pi / 180)
