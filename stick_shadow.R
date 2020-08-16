@@ -21,7 +21,7 @@ r <- shadow(time=Sys.time(), longitude=longitude, latitude=latitude, height=heig
 TIME <- format(time, "%Y-%b-%d %H:%M %Z")
 LON <- if (longitude < 0) paste0(abs(longitude), "W") else paste0(longitude, "E")
 LAT <- if (latitude < 0) paste0(abs(lattude), "S") else paste0(latitude, "N")
-R <- 15                                # cm (suitable for letter-size paper)
+R <- 10                                # yields approx 25cm span, suitable for letter-size paper
 lim <- c(-1,1) * R
 
 if (!interactive()) png("stick_shadow.png", unit="in", width=7, height=7, res=100, pointsize=11)
