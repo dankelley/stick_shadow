@@ -3,7 +3,7 @@ time <- Sys.time()
 longitude <- -63.57
 latitude <- 44.68
 height <- 2                            # cm (convenient for a sheet of paper)
-shadow <- function(time=Sys.time(), longitude=-63.57, latitude=44.68, height=0.2)
+shadow <- function(time=Sys.time(), longitude=-63.57, latitude=44.68, height=2)
 {
     sa <- sunAngle(time, longitude, latitude)
     daytime <- sa$altitude > 0
@@ -21,7 +21,7 @@ TIME <- format(time, "%Y-%b-%d %H:%M %Z")
 LON <- if (longitude < 0) paste0(abs(longitude), "W") else paste0(longitude, "E")
 LAT <- if (latitude < 0) paste0(abs(lattude), "S") else paste0(latitude, "N")
 
-R <- 1
+R <- 15                                # cm (suitable for letter-size paper)
 lim <- c(-1,1) * R
 
 if (!interactive()) png("stick_shadow.png", unit="in", width=7, height=7, res=100, pointsize=11)
@@ -70,7 +70,7 @@ if (r$shadow$length > 0) {
     text(-R+3*R/denom, 0, "W")
 
     ## Centre, guiding line, shadow line
-    points(0, 0, col="gray", pch=20)
+    points(0, 0, pch=20)
     X <- R * sin(r$shadow$angle*pi/180)
     Y <- R * cos(r$shadow$angle*pi/180)
     lines(c(0, X), c(0, Y), col="gray")
