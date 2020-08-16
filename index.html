@@ -1,26 +1,43 @@
 <html>
+
     <body>
 
-        <p>The image below shows the shadow that would be made by a thin 2cm
-        stick or pin oriented vertically to a flat level surface at Halifax, Nova
-        Scotia, Canada.  The thick line emanating from the dot in the centre
-        indicates that shadow.  For reference, a gray line extends to the angle
-        axis, and a circle is drawn to indicate a shadow length of 2cm.</p>
+        <p>The image shows the shadow that would be made by a thin 2cm stick
+        aligned perpendicular to a flat level surface at Halifax, Nova Scotia,
+        Canada at the indicated time.  The thick line emanating from the dot in
+        the centre indicates the shadow of a stick placed at the dot.  For
+        scale, the inner circle represents a 2cm radius.</p>
 
-        <p> This script is run at regular intervals throughout the day and night, but
-        the full diagram is only shown whilst the sun is above the horizon at
-        the study site.</p
+        <p> This script is run at regular intervals throughout the day and
+        night, but the full diagram is only shown whilst the sun is above the
+        horizon at Halifax.</p
 
         <p>The source code, <a href="stick_shadow.R">stick_shadow.R</a>, is
-        written in the R language. Small alterations would be sufficient for
-        application to other locations.</p>
+        written in the R language. Only minor alterations would be needed for
+        application to other locations and times.</p>
 
-        <p>A miniature observatory could be made by printing this on a
-        regular-sized sheet of paper, attaching that to a piece of corrugated
-        cardboard, and pushing a pin into the centre.  With this, it would be
-        easy to determine the orientation of a room or a building. Adjusting
-        the printed size so that the inner circle has radius 2cm will permit
-        tests with shadow length.</p>
+        <p>Here's how to make a miniature solar observatory:</p>
+
+        <ul>
+            <li> Print this on a letter-size sheet of paper.</li>
+            <li> Place the paper on a sheet of corrugated cardboard, or foam,
+                or a carpet.</li>
+            <li> Shove a toothpick or sewing pin straight down through the paper
+                and into the material below, at the centre dot on the diagram.</li>
+            <li> Rotate the paper around until the shadow made by the sun lines
+                up with the line in the diagram.</li>
+            <li> The angle axis indicates the directions of the compass.  (This is the true
+                compass, not a magnetic compass.)</li>
+        </ul>
+
+        <p> For safety, do not leave the toothpick or the pin in the sheet,
+        especially if there are young children or animals in the household.</p>
+
+        <p> If you want to make a diagram for another location or time,
+        download <a href="stick_shadow.R">stick_shadow.R</a> and modify lines 2
+        through 5 as appropriate, and then run this in Rstudio or another R
+        program.  You'll need to install the 'oce' package (and perhaps some
+        other packages) first.</p>
 
         <p> -- Dan Kelley</p>
 
