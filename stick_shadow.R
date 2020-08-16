@@ -24,7 +24,7 @@ LAT <- if (latitude < 0) paste0(abs(lattude), "S") else paste0(latitude, "N")
 R <- 1
 lim <- c(-1,1) * R
 
-if (!interactive()) png("stick_shadow.png", unit="in", width=7, height=7, res=200, pointsize=11)
+if (!interactive()) png("stick_shadow.png", unit="in", width=7, height=7, res=100, pointsize=11)
 par(mar=c(2,2,6,2))
 if (r$shadow$length > 0) {
     plot(lim, lim, xlim=lim, ylim=lim, asp=1, type="n", xaxs="i", yaxs="i", axes=FALSE, xlab="", ylab="")
