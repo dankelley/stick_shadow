@@ -2,7 +2,7 @@ library(oce)
 time <- Sys.time()
 longitude <- -63.57
 latitude <- 44.68
-height <- 0.2
+height <- 2                            # cm (convenient for a sheet of paper)
 shadow <- function(time=Sys.time(), longitude=-63.57, latitude=44.68, height=0.2)
 {
     sa <- sunAngle(time, longitude, latitude)
@@ -79,7 +79,7 @@ if (r$shadow$length > 0) {
     ANGLE <- sprintf("%.1f %s", abs(r$shadow$angle), if (r$shadow$angle >= 0) "clockwise" else "anticlockwise")
     mtext(TIME, line=5, adj=0)
     mtext(paste(LON, LAT), line=5, adj=1)
-    msg <- sprintf("A stick of height %.2f m\ncasts a shadow of length %.2f m\n at angle %s degrees from North",
+    msg <- sprintf("A stick of height %.1f cm\ncasts a shadow of length %.1f cm\n at angle %s degrees from North",
                    height, r$shadow$length, ANGLE)
     mtext(msg, line=2)
 } else {
