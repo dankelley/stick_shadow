@@ -26,7 +26,7 @@ R <- 15                                # cm (suitable for letter-size paper)
 lim <- c(-1,1) * R
 
 if (!interactive()) png("stick_shadow.png", unit="in", width=7, height=7, res=100, pointsize=11)
-par(mar=c(2,2,6,2))
+par(mar=c(2,2,7,2))
 if (r$shadow$length > 0) {
     plot(lim, lim, xlim=lim, ylim=lim, asp=1, type="n", xaxs="i", yaxs="i", axes=FALSE, xlab="", ylab="")
 
@@ -78,10 +78,10 @@ if (r$shadow$length > 0) {
     lines(c(0, r$shadow$x), c(0, r$shadow$y), lwd=2)
 
     ANGLE <- sprintf("%.1f %s", abs(r$shadow$angle), if (r$shadow$angle >= 0) "clockwise" else "anticlockwise")
-    mtext(TIME, line=5, adj=0)
-    mtext(place, line=5, adj=0.5)
-    mtext(paste(LON, LAT), line=5, adj=1)
-    msg <- sprintf("A stick of height %.1f cm\ncasts a shadow of length %.1f cm\n at angle %s degrees from North",
+    mtext(TIME, line=6, adj=0)
+    mtext(place, line=6, adj=0.5)
+    mtext(paste(LON, LAT), line=6, adj=1)
+    msg <- sprintf("A stick of height %.2f cm\ncasts a shadow of length %.2f cm\n at angle %s degrees from North",
                    height, r$shadow$length, ANGLE)
     mtext(msg, line=2)
 } else {
