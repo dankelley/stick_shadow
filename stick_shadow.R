@@ -21,7 +21,6 @@ r <- shadow(time=Sys.time(), longitude=longitude, latitude=latitude, height=heig
 TIME <- format(time, "%Y-%b-%d %H:%M %Z")
 LON <- if (longitude < 0) paste0(abs(longitude), "W") else paste0(longitude, "E")
 LAT <- if (latitude < 0) paste0(abs(lattude), "S") else paste0(latitude, "N")
-
 R <- 15                                # cm (suitable for letter-size paper)
 lim <- c(-1,1) * R
 
@@ -77,11 +76,11 @@ if (r$shadow$length > 0) {
     lines(c(0, X), c(0, Y), col="gray")
     lines(c(0, r$shadow$x), c(0, r$shadow$y), lwd=2)
 
-    ANGLE <- sprintf("%.1f %s", abs(r$shadow$angle), if (r$shadow$angle >= 0) "clockwise" else "anticlockwise")
+    ANGLE <- sprintf("%.1f degrees %s", abs(r$shadow$angle), if (r$shadow$angle >= 0) "clockwise" else "anticlockwise")
     mtext(TIME, line=6, adj=0)
     mtext(place, line=6, adj=0.5)
     mtext(paste(LON, LAT), line=6, adj=1)
-    msg <- sprintf("A stick of height %.2f cm\ncasts a shadow of length %.2f cm\n at angle %s degrees from North",
+    msg <- sprintf("A stick of height %.2f cm\ncasts a shadow of length %.2f cm\n at angle %s from North",
                    height, r$shadow$length, ANGLE)
     mtext(msg, line=2)
 } else {
