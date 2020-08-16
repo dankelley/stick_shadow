@@ -1,3 +1,3 @@
 stick_shadow.png: force
-	Rscript stick_shadow.R
+	/usr/local/bin/Rscript stick_shadow.R
 force:
